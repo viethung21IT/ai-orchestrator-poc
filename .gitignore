@@ -1,0 +1,87 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+/secrets/
+credentials*.json
+service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+.pgpass
+pgpass.conf
+
+# Python environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Read-only ChatGPT project references
+/sources/
+
+# Local intent evaluation reports
+/evaluation_results/
+
+# Local development environments and tooling
+venv/
+env/
+.conda/
+conda-env/
+orchestrator_env/
+.vscode/
+.idea/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# OS metadata, logs, archives and backups
+.DS_Store
+Thumbs.db
+*.log
+*.log.*
+*.tmp
+*.temp
+*.swp
+*.bak
+*.backup
+*.dump
+*.sql.gz
+*_dump.sql
+*_backup.sql
+*.zip
+*.7z
+*.tar.gz
+*.tgz
+
+# Credentials and certificates
+**/secrets/
+**/credentials/
+credentials*.json
+*service-account*.json
+*.crt
+*.cer
+*.der
+*.jks
+*.kdbx
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+
+# Local evaluation data supplied separately
+/data/intent_independent_questions.json
+/data/local/
+/data/raw/
+[Ss]ynthetic_[Ee]nterprise_[Dd]ataset*/
+**/golden_questions.json
+**/golden_questions.csv

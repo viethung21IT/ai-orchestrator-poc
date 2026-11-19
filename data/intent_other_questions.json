@@ -1,0 +1,32 @@
+[
+  {
+    "question_id": "OTHER01",
+    "question": "Gợi ý một bài tập giãn cơ nhẹ sau khi đi bộ.",
+    "route": "other"
+  },
+  {
+    "question_id": "OTHER02",
+    "question": "Viết hai câu thơ về trời mưa.",
+    "route": "other"
+  },
+  {
+    "question_id": "OTHER03",
+    "question": "Dịch câu 'Mặt trời đang lặn' sang tiếng Anh.",
+    "route": "other"
+  },
+  {
+    "question_id": "OTHER04",
+    "question": "Luộc một quả trứng lòng đào như thế nào?",
+    "route": "other"
+  },
+  {
+    "question_id": "OTHER05",
+    "question": "Từ Trái Đất đến Mặt Trăng mất bao lâu?",
+    "route": "other"
+  },
+  {
+    "question_id": "OTHER06",
+    "question": "Kể một chuyện cười về con mèo.",
+    "route": "other"
+  }
+]
