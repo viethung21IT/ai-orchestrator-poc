@@ -139,15 +139,3 @@ python -m scripts.evaluate_fallback "<bao-cao-v2>" --threshold 0.7 --run-api
 1. Xây dựng **Query Planner** để chuyển intent đã xác nhận thành yêu cầu có cấu trúc.
 2. Tích hợp **KPI Tool** cho số liệu, **RAG** cho nội dung tài liệu và **Neo4j** cho truy vấn quan hệ.
 3. Điều phối công cụ, tổng hợp câu trả lời có bằng chứng và đánh giá luồng hoàn chỉnh.
-
-## Làm việc nhóm
-
-Giữ `main` cho code ổn định. Hai người có thể làm trên `feature/query-planner` và `feature/kpi-tool`. Ví dụ cho người phụ trách Planner:
-
-```powershell
-git switch main
-git pull --ff-only
-git switch -c feature/query-planner
-```
-
-Chạy test, xem `git diff --staged`, kiểm tra file nhạy cảm rồi commit và push nhánh tính năng. Mở Pull Request vào `main` để người còn lại review trước khi merge. Với dữ liệu và báo cáo cục bộ, thống nhất quyền chia sẻ trước khi đưa vào bất kỳ nhánh nào.
