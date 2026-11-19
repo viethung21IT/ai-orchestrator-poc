@@ -1,0 +1,673 @@
+[
+  {
+    "question_id": "Q01",
+    "route": "kpi",
+    "question": "Doanh thu ghi nhận của Atlas tháng 10/2026 là bao nhiêu?",
+    "expected_answer": "140.000.000 VND",
+    "expected_values": {
+      "revenue_vnd": 140000000
+    },
+    "evidence": [
+      "projects.csv:PRJ001",
+      "project_financials.csv:FIN005"
+    ]
+  },
+  {
+    "question_id": "Q02",
+    "route": "kpi",
+    "question": "Tổng chi phí trực tiếp của Nova từ tháng 6 đến tháng 10/2026?",
+    "expected_answer": "382.000.000 VND",
+    "expected_values": {
+      "direct_cost_vnd": 382000000
+    },
+    "evidence": [
+      "projects.csv:PRJ003",
+      "project_financials.csv:FIN011–FIN015"
+    ]
+  },
+  {
+    "question_id": "Q03",
+    "route": "kpi",
+    "question": "Lợi nhuận gộp của toàn bộ dự án trong tháng 10/2026?",
+    "expected_answer": "1.191.000.000 VND",
+    "expected_values": {
+      "gross_profit_vnd": 1191000000
+    },
+    "evidence": [
+      "project_financials.csv:period_month=2026-10-01",
+      "DOC002"
+    ]
+  },
+  {
+    "question_id": "Q04",
+    "route": "kpi",
+    "question": "So sánh tổng doanh thu tháng 10 và tháng 9/2026, chênh lệch tuyệt đối?",
+    "expected_answer": "Tháng 10: 5.306.000.000 VND; tháng 9: 6.277.000.000 VND; chênh lệch: -971.000.000 VND.",
+    "expected_values": {
+      "october_vnd": 5306000000,
+      "september_vnd": 6277000000,
+      "delta_vnd": -971000000
+    },
+    "evidence": [
+      "project_financials.csv:2026-09-01,2026-10-01"
+    ]
+  },
+  {
+    "question_id": "Q05",
+    "route": "kpi",
+    "question": "Tỷ suất lợi nhuận gộp của Aster tháng 10/2026 là bao nhiêu?",
+    "expected_answer": "Không xác định do doanh thu bằng 0; lợi nhuận gộp -10.000.000 VND.",
+    "expected_values": {
+      "gross_margin_pct": null,
+      "revenue_vnd": 0,
+      "gross_profit_vnd": -10000000
+    },
+    "evidence": [
+      "project_financials.csv:FIN035",
+      "DOC002"
+    ]
+  },
+  {
+    "question_id": "Q06",
+    "route": "rag",
+    "question": "Quy trình nghiệm thu gồm những bước nào?",
+    "expected_answer": "Kiểm tra nội bộ và lập danh sách bàn giao; UAT; xử lý lỗi và xác nhận lại; hai bên ký biên bản.",
+    "expected_values": null,
+    "evidence": [
+      "DOC001 §2"
+    ]
+  },
+  {
+    "question_id": "Q07",
+    "route": "rag",
+    "question": "Yêu cầu thay đổi phạm vi cần ai phê duyệt trước khi triển khai?",
+    "expected_answer": "Đại diện khách hàng và quản lý dự án phê duyệt bằng văn bản.",
+    "expected_values": null,
+    "evidence": [
+      "DOC003 §2"
+    ]
+  },
+  {
+    "question_id": "Q08",
+    "route": "rag",
+    "question": "Doanh thu ghi nhận có đồng nghĩa với tiền đã thu không?",
+    "expected_answer": "Không; doanh thu ghi nhận không phải tiền đã thu hoặc giá trị hợp đồng.",
+    "expected_values": null,
+    "evidence": [
+      "DOC002 §1"
+    ]
+  },
+  {
+    "question_id": "Q09",
+    "route": "rag",
+    "question": "Phoenix cần đạt điều kiện nào trước khi chuyển UAT?",
+    "expected_answer": "Hoàn thành kiểm thử nội bộ, hết lỗi nghiêm trọng và mức cao, chuẩn bị câu hỏi có đáp án chuẩn.",
+    "expected_values": null,
+    "evidence": [
+      "DOC008 §3"
+    ]
+  },
+  {
+    "question_id": "Q10",
+    "route": "rag",
+    "question": "Luna được xác nhận nghiệm thu ngày nào?",
+    "expected_answer": "30/10/2026.",
+    "expected_values": {
+      "acceptance_date": "2026-10-30"
+    },
+    "evidence": [
+      "DOC007 §3"
+    ]
+  },
+  {
+    "question_id": "Q11",
+    "route": "graph",
+    "question": "Hợp đồng HD001 gồm những dự án nào?",
+    "expected_answer": "Atlas (PRJ001) và Orion (PRJ002).",
+    "expected_values": {
+      "project_ids": [
+        "PRJ001",
+        "PRJ002"
+      ]
+    },
+    "evidence": [
+      "projects.csv:contract_id=HD001"
+    ]
+  },
+  {
+    "question_id": "Q12",
+    "route": "graph",
+    "question": "Khách hàng nào ký hợp đồng của dự án Nova?",
+    "expected_answer": "Công ty giả lập Nam Phúc (CUS002), hợp đồng HD002.",
+    "expected_values": {
+      "customer_id": "CUS002",
+      "contract_id": "HD002"
+    },
+    "evidence": [
+      "projects.csv:PRJ003",
+      "contracts.csv:HD002",
+      "customers.csv:CUS002"
+    ]
+  },
+  {
+    "question_id": "Q13",
+    "route": "graph",
+    "question": "Phòng Dữ liệu & AI phụ trách những dự án nào?",
+    "expected_answer": "Sirius, Polaris, Phoenix, Borealis, Horizon, Neptune, Titan, Zenith, Fjord, Lotus, Sage, Acorn.",
+    "expected_values": {
+      "project_ids": [
+        "PRJ005",
+        "PRJ008",
+        "PRJ010",
+        "PRJ012",
+        "PRJ018",
+        "PRJ024",
+        "PRJ030",
+        "PRJ036",
+        "PRJ042",
+        "PRJ048",
+        "PRJ054",
+        "PRJ060"
+      ]
+    },
+    "evidence": [
+      "departments.csv:DEP002",
+      "projects.csv:department_id=DEP002"
+    ]
+  },
+  {
+    "question_id": "Q14",
+    "route": "graph",
+    "question": "Công ty giả lập Bắc Minh có những dự án nào?",
+    "expected_answer": "Atlas, Orion và Polaris.",
+    "expected_values": {
+      "project_ids": [
+        "PRJ001",
+        "PRJ002",
+        "PRJ008"
+      ]
+    },
+    "evidence": [
+      "customers.csv:CUS001",
+      "contracts.csv:HD001,HD006",
+      "projects.csv"
+    ]
+  },
+  {
+    "question_id": "Q15",
+    "route": "graph",
+    "question": "Các tài liệu nào liên kết trực tiếp với Atlas?",
+    "expected_answer": "DOC004 (phụ lục HD001) và DOC005 (biên bản rà soát Atlas).",
+    "expected_values": {
+      "document_ids": [
+        "DOC004",
+        "DOC005"
+      ]
+    },
+    "evidence": [
+      "document_projects.csv:PRJ001",
+      "documents.csv"
+    ]
+  },
+  {
+    "question_id": "Q16",
+    "route": "hybrid_graph_rag",
+    "question": "Atlas thuộc hợp đồng nào và vì sao chưa nghiệm thu?",
+    "expected_answer": "HD001; còn lỗi mức cao do trùng mã sản phẩm khi nhập CSV, khách hàng chưa ký biên bản. Phải sửa lỗi, kiểm thử lại và tổ chức UAT.",
+    "expected_values": {
+      "contract_id": "HD001"
+    },
+    "evidence": [
+      "projects.csv:PRJ001",
+      "DOC004 §2",
+      "DOC005 §2–3",
+      "DOC001 §1–3"
+    ]
+  },
+  {
+    "question_id": "Q17",
+    "route": "hybrid_graph_rag",
+    "question": "Khách hàng của Aster là ai và điều kiện để triển khai tiếp là gì?",
+    "expected_answer": "Công ty giả lập An Việt (CUS005); đại diện khách hàng và quản lý dự án phê duyệt phạm vi điều chỉnh bằng văn bản.",
+    "expected_values": {
+      "customer_id": "CUS005"
+    },
+    "evidence": [
+      "projects.csv:PRJ007",
+      "contracts.csv:HD005",
+      "customers.csv:CUS005",
+      "DOC006 §3"
+    ]
+  },
+  {
+    "question_id": "Q18",
+    "route": "hybrid_graph_rag",
+    "question": "Dự án Orion thuộc hợp đồng nào và điều kiện nghiệm thu riêng là gì?",
+    "expected_answer": "HD001; chứng minh đồng bộ thử nghiệm thành công ít nhất 3 lần liên tiếp, đồng thời tuân thủ quy trình chung.",
+    "expected_values": {
+      "contract_id": "HD001",
+      "minimum_successful_syncs": 3
+    },
+    "evidence": [
+      "projects.csv:PRJ002",
+      "DOC004 §2",
+      "DOC001"
+    ]
+  },
+  {
+    "question_id": "Q19",
+    "route": "hybrid_kpi_rag",
+    "question": "Doanh thu và chi phí Aster tháng 10/2026 là bao nhiêu? Biên bản nói gì về việc tạm dừng? ",
+    "expected_answer": "Doanh thu 0 VND, chi phí trực tiếp 10.000.000 VND. Tạm dừng từ 01/10 vì phạm vi thay đổi chưa được phê duyệt; vẫn có thể phát sinh chi phí duy trì môi trường. Không khẳng định biên bản chứng minh số tiền cụ thể.",
+    "expected_values": {
+      "revenue_vnd": 0,
+      "direct_cost_vnd": 10000000
+    },
+    "evidence": [
+      "project_financials.csv:FIN035",
+      "DOC006 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q20",
+    "route": "insufficient_evidence",
+    "question": "Khách hàng đã thanh toán bao nhiêu tiền cho HD004?",
+    "expected_answer": "Không đủ dữ liệu để xác định tiền đã thu. Không dùng doanh thu hoặc giá trị hợp đồng thay thế.",
+    "expected_values": null,
+    "evidence": [
+      "DOC002 §1,3",
+      "DOC007 §3"
+    ]
+  },
+  {
+    "question_id": "Q21",
+    "route": "kpi",
+    "question": "Doanh thu ghi nhận của Aurora tháng 10/2026 là bao nhiêu?",
+    "expected_answer": "135.000.000 VND",
+    "expected_values": {
+      "revenue_vnd": 135000000
+    },
+    "evidence": [
+      "projects.csv:PRJ011",
+      "project_financials.csv:PRJ011:2026-10-01"
+    ]
+  },
+  {
+    "question_id": "Q22",
+    "route": "kpi",
+    "question": "Chi phí trực tiếp của Borealis tháng 09/2026 là bao nhiêu?",
+    "expected_answer": "133.000.000 VND",
+    "expected_values": {
+      "direct_cost_vnd": 133000000
+    },
+    "evidence": [
+      "projects.csv:PRJ012",
+      "project_financials.csv:PRJ012:2026-09-01"
+    ]
+  },
+  {
+    "question_id": "Q23",
+    "route": "kpi",
+    "question": "Lợi nhuận gộp của Comet tháng 10/2026 là bao nhiêu?",
+    "expected_answer": "20.000.000 VND",
+    "expected_values": {
+      "gross_profit_vnd": 20000000
+    },
+    "evidence": [
+      "projects.csv:PRJ013",
+      "project_financials.csv:PRJ013:2026-10-01"
+    ]
+  },
+  {
+    "question_id": "Q24",
+    "route": "kpi",
+    "question": "Doanh thu ghi nhận của Draco giai đoạn 06–10/2026 là bao nhiêu?",
+    "expected_answer": "335.000.000 VND",
+    "expected_values": {
+      "revenue_vnd": 335000000
+    },
+    "evidence": [
+      "projects.csv:PRJ014",
+      "project_financials.csv:PRJ014"
+    ]
+  },
+  {
+    "question_id": "Q25",
+    "route": "kpi",
+    "question": "Chi phí trực tiếp của Eclipse tháng 10/2026 là bao nhiêu?",
+    "expected_answer": "15.000.000 VND",
+    "expected_values": {
+      "direct_cost_vnd": 15000000
+    },
+    "evidence": [
+      "projects.csv:PRJ015",
+      "project_financials.csv:PRJ015:2026-10-01"
+    ]
+  },
+  {
+    "question_id": "Q26",
+    "route": "kpi",
+    "question": "Lợi nhuận gộp của Falcon giai đoạn 06–10/2026 là bao nhiêu?",
+    "expected_answer": "141.000.000 VND",
+    "expected_values": {
+      "gross_profit_vnd": 141000000
+    },
+    "evidence": [
+      "projects.csv:PRJ016",
+      "project_financials.csv:PRJ016"
+    ]
+  },
+  {
+    "question_id": "Q27",
+    "route": "kpi",
+    "question": "Tổng lợi nhuận gộp phòng Tích hợp & vận hành tháng 10/2026?",
+    "expected_answer": "153.000.000 VND",
+    "expected_values": {
+      "gross_profit_vnd": 153000000
+    },
+    "evidence": [
+      "departments.csv:DEP005",
+      "projects.csv",
+      "project_financials.csv:2026-10-01"
+    ]
+  },
+  {
+    "question_id": "Q28",
+    "route": "kpi",
+    "question": "Tổng lợi nhuận gộp phòng Tư vấn nghiệp vụ tháng 09/2026?",
+    "expected_answer": "243.000.000 VND",
+    "expected_values": {
+      "gross_profit_vnd": 243000000
+    },
+    "evidence": [
+      "departments.csv:DEP006",
+      "projects.csv",
+      "project_financials.csv:2026-09-01"
+    ]
+  },
+  {
+    "question_id": "Q29",
+    "route": "rag",
+    "question": "Dự án Aurora cần đạt những điều kiện gì để chuyển UAT?",
+    "expected_answer": "Khắc phục lỗi mã đơn bị trùng, chạy đạt ít nhất 3 kịch bản trọng điểm, hoàn tất báo cáo kiểm thử nội bộ và tài liệu hướng dẫn.",
+    "expected_values": {
+      "minimum_test_cases": 3
+    },
+    "evidence": [
+      "DOC014 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q30",
+    "route": "rag",
+    "question": "Dự án Comet được xác nhận nghiệm thu khi nào?",
+    "expected_answer": "Ngày 25/10/2026; hai bên đã ký biên bản.",
+    "expected_values": {
+      "acceptance_date": "2026-10-25"
+    },
+    "evidence": [
+      "DOC016 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q31",
+    "route": "rag",
+    "question": "Vì sao Eclipse tạm dừng và cần điều kiện gì để tiếp tục?",
+    "expected_answer": "Thay đổi phạm vi chưa được phê duyệt; cần xác nhận bằng văn bản của đại diện khách hàng và quản lý dự án.",
+    "expected_values": null,
+    "evidence": [
+      "DOC018 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q32",
+    "route": "rag",
+    "question": "Dự án Horizon cần đạt những điều kiện gì để chuyển UAT?",
+    "expected_answer": "Khắc phục lỗi quyền xem danh sách chưa đúng, chạy đạt ít nhất 5 kịch bản trọng điểm, hoàn tất báo cáo kiểm thử nội bộ và tài liệu hướng dẫn.",
+    "expected_values": {
+      "minimum_test_cases": 5
+    },
+    "evidence": [
+      "DOC021 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q33",
+    "route": "rag",
+    "question": "Vì sao Iris tạm dừng và cần điều kiện gì để tiếp tục?",
+    "expected_answer": "Thay đổi phạm vi chưa được phê duyệt; cần xác nhận bằng văn bản của đại diện khách hàng và quản lý dự án.",
+    "expected_values": null,
+    "evidence": [
+      "DOC022 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q34",
+    "route": "rag",
+    "question": "Dự án Lyra cần đạt những điều kiện gì để chuyển UAT?",
+    "expected_answer": "Khắc phục lỗi kịch bản xuất báo cáo thất bại, chạy đạt ít nhất 4 kịch bản trọng điểm, hoàn tất báo cáo kiểm thử nội bộ và tài liệu hướng dẫn.",
+    "expected_values": {
+      "minimum_test_cases": 4
+    },
+    "evidence": [
+      "DOC025 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q35",
+    "route": "rag",
+    "question": "Vì sao Opal tạm dừng và cần điều kiện gì để tiếp tục?",
+    "expected_answer": "Thay đổi phạm vi chưa được phê duyệt; cần xác nhận bằng văn bản của đại diện khách hàng và quản lý dự án.",
+    "expected_values": null,
+    "evidence": [
+      "DOC028 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q36",
+    "route": "rag",
+    "question": "Dự án Rigel cần đạt những điều kiện gì để chuyển UAT?",
+    "expected_answer": "Khắc phục lỗi xung đột lịch chưa được cảnh báo, chạy đạt ít nhất 5 kịch bản trọng điểm, hoàn tất báo cáo kiểm thử nội bộ và tài liệu hướng dẫn.",
+    "expected_values": {
+      "minimum_test_cases": 5
+    },
+    "evidence": [
+      "DOC031 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q37",
+    "route": "graph",
+    "question": "Hợp đồng HD009 gồm các dự án nào?",
+    "expected_answer": "Aurora (PRJ011), Gaia (PRJ043).",
+    "expected_values": {
+      "project_ids": [
+        "PRJ011",
+        "PRJ043"
+      ]
+    },
+    "evidence": [
+      "projects.csv:contract_id=HD009"
+    ]
+  },
+  {
+    "question_id": "Q38",
+    "route": "graph",
+    "question": "Hợp đồng HD010 gồm các dự án nào?",
+    "expected_answer": "Borealis (PRJ012), Halo (PRJ044).",
+    "expected_values": {
+      "project_ids": [
+        "PRJ012",
+        "PRJ044"
+      ]
+    },
+    "evidence": [
+      "projects.csv:contract_id=HD010"
+    ]
+  },
+  {
+    "question_id": "Q39",
+    "route": "graph",
+    "question": "Hợp đồng HD018 gồm các dự án nào?",
+    "expected_answer": "Jupiter (PRJ020), Prism (PRJ052).",
+    "expected_values": {
+      "project_ids": [
+        "PRJ020",
+        "PRJ052"
+      ]
+    },
+    "evidence": [
+      "projects.csv:contract_id=HD018"
+    ]
+  },
+  {
+    "question_id": "Q40",
+    "route": "graph",
+    "question": "Khách hàng nào ký hợp đồng của Yarrow?",
+    "expected_answer": "Công ty giả lập Trường Sơn (CUS015), hợp đồng HD033.",
+    "expected_values": {
+      "customer_id": "CUS015",
+      "contract_id": "HD033"
+    },
+    "evidence": [
+      "projects.csv:PRJ035",
+      "contracts.csv:HD033",
+      "customers.csv:CUS015"
+    ]
+  },
+  {
+    "question_id": "Q41",
+    "route": "graph",
+    "question": "Khách hàng nào ký hợp đồng của Fjord?",
+    "expected_answer": "Công ty giả lập Thanh Lâm (CUS007), hợp đồng HD040.",
+    "expected_values": {
+      "customer_id": "CUS007",
+      "contract_id": "HD040"
+    },
+    "evidence": [
+      "projects.csv:PRJ042",
+      "contracts.csv:HD040",
+      "customers.csv:CUS007"
+    ]
+  },
+  {
+    "question_id": "Q42",
+    "route": "graph",
+    "question": "Khách hàng nào ký hợp đồng của Acorn?",
+    "expected_answer": "Công ty giả lập Phú Sơn (CUS008), hợp đồng HD026.",
+    "expected_values": {
+      "customer_id": "CUS008",
+      "contract_id": "HD026"
+    },
+    "evidence": [
+      "projects.csv:PRJ060",
+      "contracts.csv:HD026",
+      "customers.csv:CUS008"
+    ]
+  },
+  {
+    "question_id": "Q43",
+    "route": "hybrid_graph_rag",
+    "question": "Draco thuộc hợp đồng nào và cần làm gì trước khi chuyển UAT?",
+    "expected_answer": "HD012; Khắc phục lỗi thiếu kiểm tra mã danh mục, chạy đạt ít nhất 6 kịch bản trọng điểm, hoàn tất báo cáo kiểm thử nội bộ và tài liệu hướng dẫn.",
+    "expected_values": {
+      "contract_id": "HD012",
+      "minimum_test_cases": 6
+    },
+    "evidence": [
+      "projects.csv:PRJ014",
+      "DOC017 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q44",
+    "route": "hybrid_graph_rag",
+    "question": "Falcon thuộc hợp đồng nào và được nghiệm thu khi nào?",
+    "expected_answer": "HD014; Ngày 28/10/2026; hai bên đã ký biên bản.",
+    "expected_values": {
+      "contract_id": "HD014",
+      "acceptance_date": "2026-10-28"
+    },
+    "evidence": [
+      "projects.csv:PRJ016",
+      "DOC019 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q45",
+    "route": "hybrid_graph_rag",
+    "question": "Jupiter thuộc hợp đồng nào và cần làm gì trước khi chuyển UAT?",
+    "expected_answer": "HD018; Khắc phục lỗi thông báo trạng thái không gửi, chạy đạt ít nhất 7 kịch bản trọng điểm, hoàn tất báo cáo kiểm thử nội bộ và tài liệu hướng dẫn.",
+    "expected_values": {
+      "contract_id": "HD018",
+      "minimum_test_cases": 7
+    },
+    "evidence": [
+      "projects.csv:PRJ020",
+      "DOC023 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q46",
+    "route": "hybrid_graph_rag",
+    "question": "Meridian thuộc hợp đồng nào và được nghiệm thu khi nào?",
+    "expected_answer": "HD021; Ngày 26/10/2026; hai bên đã ký biên bản.",
+    "expected_values": {
+      "contract_id": "HD021",
+      "acceptance_date": "2026-10-26"
+    },
+    "evidence": [
+      "projects.csv:PRJ023",
+      "DOC026 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q47",
+    "route": "hybrid_kpi_rag",
+    "question": "Doanh thu và chi phí trực tiếp tháng 10/2026 của Eclipse là bao nhiêu, vì sao dự án tạm dừng?",
+    "expected_answer": "Doanh thu 0 VND, chi phí 15.000.000 VND. Thay đổi phạm vi chưa được phê duyệt; cần xác nhận bằng văn bản của đại diện khách hàng và quản lý dự án. Không suy diễn nguyên nhân của số tiền.",
+    "expected_values": {
+      "revenue_vnd": 0,
+      "direct_cost_vnd": 15000000
+    },
+    "evidence": [
+      "project_financials.csv:PRJ015:2026-10-01",
+      "DOC018 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q48",
+    "route": "hybrid_kpi_rag",
+    "question": "Doanh thu và chi phí trực tiếp tháng 10/2026 của Iris là bao nhiêu, vì sao dự án tạm dừng?",
+    "expected_answer": "Doanh thu 0 VND, chi phí 4.000.000 VND. Thay đổi phạm vi chưa được phê duyệt; cần xác nhận bằng văn bản của đại diện khách hàng và quản lý dự án. Không suy diễn nguyên nhân của số tiền.",
+    "expected_values": {
+      "revenue_vnd": 0,
+      "direct_cost_vnd": 4000000
+    },
+    "evidence": [
+      "project_financials.csv:PRJ019:2026-10-01",
+      "DOC022 §2–3"
+    ]
+  },
+  {
+    "question_id": "Q49",
+    "route": "insufficient_evidence",
+    "question": "HD009 còn bao nhiêu công nợ?",
+    "expected_answer": "Không đủ dữ liệu công nợ hoặc thanh toán; không suy ra từ doanh thu và giá trị hợp đồng.",
+    "expected_values": null,
+    "evidence": [
+      "DOC002 §1,3"
+    ]
+  },
+  {
+    "question_id": "Q50",
+    "route": "insufficient_evidence",
+    "question": "Doanh thu dự án Aurora tháng 11/2026?",
+    "expected_answer": "Không đủ dữ liệu tháng 11/2026; phạm vi tài chính chỉ tháng 06–10/2026, không mặc định 0.",
+    "expected_values": null,
+    "evidence": [
+      "DOC002 §3",
+      "project_financials.csv"
+    ]
+  }
+]

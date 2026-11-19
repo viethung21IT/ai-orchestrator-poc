@@ -1,0 +1,51 @@
+﻿question_id,route,question,expected_answer,evidence
+Q01,kpi,Doanh thu ghi nhận của Atlas tháng 10/2026 là bao nhiêu?,140.000.000 VND,projects.csv:PRJ001; project_financials.csv:FIN005
+Q02,kpi,Tổng chi phí trực tiếp của Nova từ tháng 6 đến tháng 10/2026?,382.000.000 VND,projects.csv:PRJ003; project_financials.csv:FIN011–FIN015
+Q03,kpi,Lợi nhuận gộp của toàn bộ dự án trong tháng 10/2026?,1.191.000.000 VND,project_financials.csv:period_month=2026-10-01; DOC002
+Q04,kpi,"So sánh tổng doanh thu tháng 10 và tháng 9/2026, chênh lệch tuyệt đối?",Tháng 10: 5.306.000.000 VND; tháng 9: 6.277.000.000 VND; chênh lệch: -971.000.000 VND.,"project_financials.csv:2026-09-01,2026-10-01"
+Q05,kpi,Tỷ suất lợi nhuận gộp của Aster tháng 10/2026 là bao nhiêu?,Không xác định do doanh thu bằng 0; lợi nhuận gộp -10.000.000 VND.,project_financials.csv:FIN035; DOC002
+Q06,rag,Quy trình nghiệm thu gồm những bước nào?,Kiểm tra nội bộ và lập danh sách bàn giao; UAT; xử lý lỗi và xác nhận lại; hai bên ký biên bản.,DOC001 §2
+Q07,rag,Yêu cầu thay đổi phạm vi cần ai phê duyệt trước khi triển khai?,Đại diện khách hàng và quản lý dự án phê duyệt bằng văn bản.,DOC003 §2
+Q08,rag,Doanh thu ghi nhận có đồng nghĩa với tiền đã thu không?,Không; doanh thu ghi nhận không phải tiền đã thu hoặc giá trị hợp đồng.,DOC002 §1
+Q09,rag,Phoenix cần đạt điều kiện nào trước khi chuyển UAT?,"Hoàn thành kiểm thử nội bộ, hết lỗi nghiêm trọng và mức cao, chuẩn bị câu hỏi có đáp án chuẩn.",DOC008 §3
+Q10,rag,Luna được xác nhận nghiệm thu ngày nào?,30/10/2026.,DOC007 §3
+Q11,graph,Hợp đồng HD001 gồm những dự án nào?,Atlas (PRJ001) và Orion (PRJ002).,projects.csv:contract_id=HD001
+Q12,graph,Khách hàng nào ký hợp đồng của dự án Nova?,"Công ty giả lập Nam Phúc (CUS002), hợp đồng HD002.",projects.csv:PRJ003; contracts.csv:HD002; customers.csv:CUS002
+Q13,graph,Phòng Dữ liệu & AI phụ trách những dự án nào?,"Sirius, Polaris, Phoenix, Borealis, Horizon, Neptune, Titan, Zenith, Fjord, Lotus, Sage, Acorn.",departments.csv:DEP002; projects.csv:department_id=DEP002
+Q14,graph,Công ty giả lập Bắc Minh có những dự án nào?,"Atlas, Orion và Polaris.","customers.csv:CUS001; contracts.csv:HD001,HD006; projects.csv"
+Q15,graph,Các tài liệu nào liên kết trực tiếp với Atlas?,DOC004 (phụ lục HD001) và DOC005 (biên bản rà soát Atlas).,document_projects.csv:PRJ001; documents.csv
+Q16,hybrid_graph_rag,Atlas thuộc hợp đồng nào và vì sao chưa nghiệm thu?,"HD001; còn lỗi mức cao do trùng mã sản phẩm khi nhập CSV, khách hàng chưa ký biên bản. Phải sửa lỗi, kiểm thử lại và tổ chức UAT.",projects.csv:PRJ001; DOC004 §2; DOC005 §2–3; DOC001 §1–3
+Q17,hybrid_graph_rag,Khách hàng của Aster là ai và điều kiện để triển khai tiếp là gì?,Công ty giả lập An Việt (CUS005); đại diện khách hàng và quản lý dự án phê duyệt phạm vi điều chỉnh bằng văn bản.,projects.csv:PRJ007; contracts.csv:HD005; customers.csv:CUS005; DOC006 §3
+Q18,hybrid_graph_rag,Dự án Orion thuộc hợp đồng nào và điều kiện nghiệm thu riêng là gì?,"HD001; chứng minh đồng bộ thử nghiệm thành công ít nhất 3 lần liên tiếp, đồng thời tuân thủ quy trình chung.",projects.csv:PRJ002; DOC004 §2; DOC001
+Q19,hybrid_kpi_rag,Doanh thu và chi phí Aster tháng 10/2026 là bao nhiêu? Biên bản nói gì về việc tạm dừng? ,"Doanh thu 0 VND, chi phí trực tiếp 10.000.000 VND. Tạm dừng từ 01/10 vì phạm vi thay đổi chưa được phê duyệt; vẫn có thể phát sinh chi phí duy trì môi trường. Không khẳng định biên bản chứng minh số tiền cụ thể.",project_financials.csv:FIN035; DOC006 §2–3
+Q20,insufficient_evidence,Khách hàng đã thanh toán bao nhiêu tiền cho HD004?,Không đủ dữ liệu để xác định tiền đã thu. Không dùng doanh thu hoặc giá trị hợp đồng thay thế.,"DOC002 §1,3; DOC007 §3"
+Q21,kpi,Doanh thu ghi nhận của Aurora tháng 10/2026 là bao nhiêu?,135.000.000 VND,projects.csv:PRJ011; project_financials.csv:PRJ011:2026-10-01
+Q22,kpi,Chi phí trực tiếp của Borealis tháng 09/2026 là bao nhiêu?,133.000.000 VND,projects.csv:PRJ012; project_financials.csv:PRJ012:2026-09-01
+Q23,kpi,Lợi nhuận gộp của Comet tháng 10/2026 là bao nhiêu?,20.000.000 VND,projects.csv:PRJ013; project_financials.csv:PRJ013:2026-10-01
+Q24,kpi,Doanh thu ghi nhận của Draco giai đoạn 06–10/2026 là bao nhiêu?,335.000.000 VND,projects.csv:PRJ014; project_financials.csv:PRJ014
+Q25,kpi,Chi phí trực tiếp của Eclipse tháng 10/2026 là bao nhiêu?,15.000.000 VND,projects.csv:PRJ015; project_financials.csv:PRJ015:2026-10-01
+Q26,kpi,Lợi nhuận gộp của Falcon giai đoạn 06–10/2026 là bao nhiêu?,141.000.000 VND,projects.csv:PRJ016; project_financials.csv:PRJ016
+Q27,kpi,Tổng lợi nhuận gộp phòng Tích hợp & vận hành tháng 10/2026?,153.000.000 VND,departments.csv:DEP005; projects.csv; project_financials.csv:2026-10-01
+Q28,kpi,Tổng lợi nhuận gộp phòng Tư vấn nghiệp vụ tháng 09/2026?,243.000.000 VND,departments.csv:DEP006; projects.csv; project_financials.csv:2026-09-01
+Q29,rag,Dự án Aurora cần đạt những điều kiện gì để chuyển UAT?,"Khắc phục lỗi mã đơn bị trùng, chạy đạt ít nhất 3 kịch bản trọng điểm, hoàn tất báo cáo kiểm thử nội bộ và tài liệu hướng dẫn.",DOC014 §2–3
+Q30,rag,Dự án Comet được xác nhận nghiệm thu khi nào?,Ngày 25/10/2026; hai bên đã ký biên bản.,DOC016 §2–3
+Q31,rag,Vì sao Eclipse tạm dừng và cần điều kiện gì để tiếp tục?,Thay đổi phạm vi chưa được phê duyệt; cần xác nhận bằng văn bản của đại diện khách hàng và quản lý dự án.,DOC018 §2–3
+Q32,rag,Dự án Horizon cần đạt những điều kiện gì để chuyển UAT?,"Khắc phục lỗi quyền xem danh sách chưa đúng, chạy đạt ít nhất 5 kịch bản trọng điểm, hoàn tất báo cáo kiểm thử nội bộ và tài liệu hướng dẫn.",DOC021 §2–3
+Q33,rag,Vì sao Iris tạm dừng và cần điều kiện gì để tiếp tục?,Thay đổi phạm vi chưa được phê duyệt; cần xác nhận bằng văn bản của đại diện khách hàng và quản lý dự án.,DOC022 §2–3
+Q34,rag,Dự án Lyra cần đạt những điều kiện gì để chuyển UAT?,"Khắc phục lỗi kịch bản xuất báo cáo thất bại, chạy đạt ít nhất 4 kịch bản trọng điểm, hoàn tất báo cáo kiểm thử nội bộ và tài liệu hướng dẫn.",DOC025 §2–3
+Q35,rag,Vì sao Opal tạm dừng và cần điều kiện gì để tiếp tục?,Thay đổi phạm vi chưa được phê duyệt; cần xác nhận bằng văn bản của đại diện khách hàng và quản lý dự án.,DOC028 §2–3
+Q36,rag,Dự án Rigel cần đạt những điều kiện gì để chuyển UAT?,"Khắc phục lỗi xung đột lịch chưa được cảnh báo, chạy đạt ít nhất 5 kịch bản trọng điểm, hoàn tất báo cáo kiểm thử nội bộ và tài liệu hướng dẫn.",DOC031 §2–3
+Q37,graph,Hợp đồng HD009 gồm các dự án nào?,"Aurora (PRJ011), Gaia (PRJ043).",projects.csv:contract_id=HD009
+Q38,graph,Hợp đồng HD010 gồm các dự án nào?,"Borealis (PRJ012), Halo (PRJ044).",projects.csv:contract_id=HD010
+Q39,graph,Hợp đồng HD018 gồm các dự án nào?,"Jupiter (PRJ020), Prism (PRJ052).",projects.csv:contract_id=HD018
+Q40,graph,Khách hàng nào ký hợp đồng của Yarrow?,"Công ty giả lập Trường Sơn (CUS015), hợp đồng HD033.",projects.csv:PRJ035; contracts.csv:HD033; customers.csv:CUS015
+Q41,graph,Khách hàng nào ký hợp đồng của Fjord?,"Công ty giả lập Thanh Lâm (CUS007), hợp đồng HD040.",projects.csv:PRJ042; contracts.csv:HD040; customers.csv:CUS007
+Q42,graph,Khách hàng nào ký hợp đồng của Acorn?,"Công ty giả lập Phú Sơn (CUS008), hợp đồng HD026.",projects.csv:PRJ060; contracts.csv:HD026; customers.csv:CUS008
+Q43,hybrid_graph_rag,Draco thuộc hợp đồng nào và cần làm gì trước khi chuyển UAT?,"HD012; Khắc phục lỗi thiếu kiểm tra mã danh mục, chạy đạt ít nhất 6 kịch bản trọng điểm, hoàn tất báo cáo kiểm thử nội bộ và tài liệu hướng dẫn.",projects.csv:PRJ014; DOC017 §2–3
+Q44,hybrid_graph_rag,Falcon thuộc hợp đồng nào và được nghiệm thu khi nào?,HD014; Ngày 28/10/2026; hai bên đã ký biên bản.,projects.csv:PRJ016; DOC019 §2–3
+Q45,hybrid_graph_rag,Jupiter thuộc hợp đồng nào và cần làm gì trước khi chuyển UAT?,"HD018; Khắc phục lỗi thông báo trạng thái không gửi, chạy đạt ít nhất 7 kịch bản trọng điểm, hoàn tất báo cáo kiểm thử nội bộ và tài liệu hướng dẫn.",projects.csv:PRJ020; DOC023 §2–3
+Q46,hybrid_graph_rag,Meridian thuộc hợp đồng nào và được nghiệm thu khi nào?,HD021; Ngày 26/10/2026; hai bên đã ký biên bản.,projects.csv:PRJ023; DOC026 §2–3
+Q47,hybrid_kpi_rag,"Doanh thu và chi phí trực tiếp tháng 10/2026 của Eclipse là bao nhiêu, vì sao dự án tạm dừng?","Doanh thu 0 VND, chi phí 15.000.000 VND. Thay đổi phạm vi chưa được phê duyệt; cần xác nhận bằng văn bản của đại diện khách hàng và quản lý dự án. Không suy diễn nguyên nhân của số tiền.",project_financials.csv:PRJ015:2026-10-01; DOC018 §2–3
+Q48,hybrid_kpi_rag,"Doanh thu và chi phí trực tiếp tháng 10/2026 của Iris là bao nhiêu, vì sao dự án tạm dừng?","Doanh thu 0 VND, chi phí 4.000.000 VND. Thay đổi phạm vi chưa được phê duyệt; cần xác nhận bằng văn bản của đại diện khách hàng và quản lý dự án. Không suy diễn nguyên nhân của số tiền.",project_financials.csv:PRJ019:2026-10-01; DOC022 §2–3
+Q49,insufficient_evidence,HD009 còn bao nhiêu công nợ?,Không đủ dữ liệu công nợ hoặc thanh toán; không suy ra từ doanh thu và giá trị hợp đồng.,"DOC002 §1,3"
+Q50,insufficient_evidence,Doanh thu dự án Aurora tháng 11/2026?,"Không đủ dữ liệu tháng 11/2026; phạm vi tài chính chỉ tháng 06–10/2026, không mặc định 0.",DOC002 §3; project_financials.csv

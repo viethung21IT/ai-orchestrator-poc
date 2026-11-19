@@ -1,0 +1,3 @@
+# Keep the synthetic fixture byte-for-byte, including CSV BOM and line endings.
+data/synthetic_enterprise_v2/** -text
+data/intent_independent_questions.json -text

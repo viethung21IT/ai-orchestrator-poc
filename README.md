@@ -33,7 +33,7 @@ app/
   schemas/    Schema request và response
   services/   Gemini, tiêu chí intent và routing
   tools/      Chỗ dành cho tích hợp công cụ
-data/         Câu hỏi ngoài nghiệp vụ phục vụ đánh giá
+data/         Dataset giả lập, câu hỏi ngoài nghiệp vụ và tập độc lập
 scripts/      Đánh giá intent, fallback và so sánh kết quả
 tests/        Kiểm thử API và đánh giá bằng mock
 ```
@@ -99,15 +99,34 @@ python -m pytest
 python -m pip check
 ```
 
-Test Gemini dùng HTTP giả lập. Test kiểm tra nội dung tập độc lập tự bỏ qua nếu file dữ liệu cục bộ chưa được cung cấp. Các test tính chỉ số và đối chiếu phiên bản vẫn chạy bằng fixture.
+Test Gemini dùng HTTP giả lập. Bộ test kiểm tra tập câu hỏi độc lập trong repo. Các test tính chỉ số và đối chiếu phiên bản dùng fixture.
+
+## Dataset dùng chung
+
+`data/synthetic_enterprise_v2/` là Synthetic Enterprise Dataset V2.0, bộ dữ liệu **giả lập** cho POC về hợp đồng và dự án phần mềm. Tên, tài liệu và số liệu đều được tạo cho kiểm thử.
+
+- `structured/` chứa 7 bảng CSV với 20 khách hàng, 40 hợp đồng, 60 dự án, 6 phòng ban, 300 bản ghi tài chính, metadata của 70 tài liệu và 75 liên kết tài liệu–dự án.
+- `documents/` chứa 70 tài liệu Markdown, gồm 3 chính sách chung và 67 tài liệu gắn dự án hoặc hợp đồng.
+- `evaluation/` chứa 50 câu golden có đáp án và bằng chứng. JSON dùng cho script, CSV phục vụ xem thủ công và `reference_checks.json` lưu kiểm tra tham chiếu.
+- `DATA_DICTIONARY.md` ghi các khóa liên kết, công thức KPI và mô hình quan hệ. `validate_dataset.py` kiểm tra dữ liệu offline bằng Python và SQLite trong bộ nhớ.
+- `data/intent_other_questions.json` bổ sung 6 câu ngoài nghiệp vụ. `data/intent_independent_questions.json` chứa 30 câu độc lập với 5 câu cho mỗi intent và trường trạng thái bằng chứng riêng.
+
+Kiểm tra dataset từ thư mục gốc:
+
+```powershell
+python data/synthetic_enterprise_v2/validate_dataset.py
+```
+
+Khi triển khai công cụ, dùng CSV và khóa liên kết cho KPI, đọc Markdown theo đường dẫn trong bảng metadata cho RAG, và dùng các thực thể cùng quan hệ đã mô tả trong Data Dictionary cho Neo4j. Chỉ dùng golden và đáp án tham chiếu để kiểm thử. Giữ dữ liệu thật, tài liệu công ty, khóa và thông tin kết nối ngoài repository.
 
 ## Đánh giá Intent Classification
 
-Đặt dataset đã được cấp quyền vào thư mục local riêng. Dùng tham số `--dataset` để truyền đường dẫn tới `golden_questions.json`. Với tập độc lập đã được cấp riêng, `--independent` đọc file cục bộ `data/intent_independent_questions.json`.
+Script mặc định đọc golden trong `data/synthetic_enterprise_v2/evaluation/golden_questions.json`. Dùng `--dataset "<duong-dan-golden_questions.json>"` khi muốn chỉ định file khác, hoặc `--independent` để đọc tập 30 câu độc lập.
 
 ```powershell
-python -m scripts.evaluate_intent --criteria v2 --dataset "<duong-dan-golden_questions.json>" --dry-run
-python -m scripts.evaluate_intent --criteria v2 --dataset "<duong-dan-golden_questions.json>" --limit 5
+python -m scripts.evaluate_intent --criteria v2 --dry-run
+python -m scripts.evaluate_intent --criteria v2 --independent --dry-run
+python -m scripts.evaluate_intent --criteria v2 --limit 5
 python -m scripts.compare_intent "<bao-cao-v1>" "<bao-cao-v2>"
 python -m scripts.evaluate_fallback "<bao-cao-v2>" --threshold 0.7
 python -m scripts.evaluate_fallback "<bao-cao-v2>" --threshold 0.7 --run-api

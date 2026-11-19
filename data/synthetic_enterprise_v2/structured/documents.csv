@@ -1,0 +1,71 @@
+﻿document_id,title,document_type,relative_path
+DOC001,Quy trình nghiệm thu dự án,policy,documents/quy_trinh_nghiem_thu.md
+DOC002,Quy định chỉ số tài chính,policy,documents/quy_dinh_kpi.md
+DOC003,Quy trình thay đổi phạm vi dự án,policy,documents/quy_trinh_thay_doi_pham_vi.md
+DOC004,Phụ lục phạm vi HD001,contract,documents/phu_luc_hd001.md
+DOC005,Biên bản rà soát Atlas ngày 30/10/2026,meeting,documents/bien_ban_atlas.md
+DOC006,Biên bản tạm dừng Aster ngày 30/09/2026,meeting,documents/bien_ban_aster.md
+DOC007,Biên bản nghiệm thu Luna ngày 30/10/2026,acceptance,documents/bien_ban_luna.md
+DOC008,Kế hoạch kiểm thử Phoenix,test_plan,documents/ke_hoach_phoenix.md
+DOC009,Biên bản rà soát Nova ngày 31/10/2026,meeting,documents/doc009.md
+DOC010,Kế hoạch kiểm thử Vega,test_plan,documents/doc010.md
+DOC011,Biên bản rà soát Sirius ngày 31/10/2026,meeting,documents/doc011.md
+DOC012,Kế hoạch kiểm thử Polaris,test_plan,documents/doc012.md
+DOC013,Biên bản nghiệm thu Helios ngày 30/10/2026,acceptance,documents/doc013.md
+DOC014,Biên bản rà soát Aurora ngày 31/10/2026,meeting,documents/doc014.md
+DOC015,Kế hoạch kiểm thử Borealis,test_plan,documents/doc015.md
+DOC016,Biên bản nghiệm thu Comet ngày 25/10/2026,acceptance,documents/doc016.md
+DOC017,Kế hoạch kiểm thử Draco,test_plan,documents/doc017.md
+DOC018,Biên bản rà soát tạm dừng Eclipse,meeting,documents/doc018.md
+DOC019,Biên bản nghiệm thu Falcon ngày 28/10/2026,acceptance,documents/doc019.md
+DOC020,Biên bản rà soát Gemini ngày 31/10/2026,meeting,documents/doc020.md
+DOC021,Kế hoạch kiểm thử Horizon,test_plan,documents/doc021.md
+DOC022,Biên bản rà soát tạm dừng Iris,meeting,documents/doc022.md
+DOC023,Kế hoạch kiểm thử Jupiter,test_plan,documents/doc023.md
+DOC024,Biên bản rà soát Kepler ngày 31/10/2026,meeting,documents/doc024.md
+DOC025,Kế hoạch kiểm thử Lyra,test_plan,documents/doc025.md
+DOC026,Biên bản nghiệm thu Meridian ngày 26/10/2026,acceptance,documents/doc026.md
+DOC027,Kế hoạch kiểm thử Neptune,test_plan,documents/doc027.md
+DOC028,Biên bản rà soát tạm dừng Opal,meeting,documents/doc028.md
+DOC029,Biên bản nghiệm thu Pegasus ngày 29/10/2026,acceptance,documents/doc029.md
+DOC030,Biên bản rà soát Quartz ngày 31/10/2026,meeting,documents/doc030.md
+DOC031,Kế hoạch kiểm thử Rigel,test_plan,documents/doc031.md
+DOC032,Biên bản rà soát tạm dừng Solstice,meeting,documents/doc032.md
+DOC033,Kế hoạch kiểm thử Titan,test_plan,documents/doc033.md
+DOC034,Biên bản rà soát Umbra ngày 31/10/2026,meeting,documents/doc034.md
+DOC035,Kế hoạch kiểm thử Vela,test_plan,documents/doc035.md
+DOC036,Biên bản nghiệm thu Wave ngày 27/10/2026,acceptance,documents/doc036.md
+DOC037,Kế hoạch kiểm thử Xenon,test_plan,documents/doc037.md
+DOC038,Biên bản rà soát tạm dừng Yarrow,meeting,documents/doc038.md
+DOC039,Biên bản nghiệm thu Zenith ngày 30/10/2026,acceptance,documents/doc039.md
+DOC040,Biên bản rà soát Argo ngày 31/10/2026,meeting,documents/doc040.md
+DOC041,Kế hoạch kiểm thử Blaze,test_plan,documents/doc041.md
+DOC042,Biên bản rà soát tạm dừng Coral,meeting,documents/doc042.md
+DOC043,Kế hoạch kiểm thử Delta,test_plan,documents/doc043.md
+DOC044,Biên bản rà soát Ember ngày 31/10/2026,meeting,documents/doc044.md
+DOC045,Kế hoạch kiểm thử Fjord,test_plan,documents/doc045.md
+DOC046,Biên bản nghiệm thu Gaia ngày 28/10/2026,acceptance,documents/doc046.md
+DOC047,Kế hoạch kiểm thử Halo,test_plan,documents/doc047.md
+DOC048,Biên bản rà soát tạm dừng Indigo,meeting,documents/doc048.md
+DOC049,Biên bản nghiệm thu Jade ngày 22/10/2026,acceptance,documents/doc049.md
+DOC050,Biên bản rà soát Kestrel ngày 31/10/2026,meeting,documents/doc050.md
+DOC051,Kế hoạch kiểm thử Lotus,test_plan,documents/doc051.md
+DOC052,Biên bản rà soát tạm dừng Mosaic,meeting,documents/doc052.md
+DOC053,Kế hoạch kiểm thử Nimbus,test_plan,documents/doc053.md
+DOC054,Biên bản rà soát Onyx ngày 31/10/2026,meeting,documents/doc054.md
+DOC055,Kế hoạch kiểm thử Prism,test_plan,documents/doc055.md
+DOC056,Biên bản nghiệm thu Rune ngày 29/10/2026,acceptance,documents/doc056.md
+DOC057,Kế hoạch kiểm thử Sage,test_plan,documents/doc057.md
+DOC058,Biên bản rà soát tạm dừng Tundra,meeting,documents/doc058.md
+DOC059,Biên bản nghiệm thu Unity ngày 23/10/2026,acceptance,documents/doc059.md
+DOC060,Biên bản rà soát Vale ngày 31/10/2026,meeting,documents/doc060.md
+DOC061,Kế hoạch kiểm thử Willow,test_plan,documents/doc061.md
+DOC062,Biên bản rà soát tạm dừng Zephyr,meeting,documents/doc062.md
+DOC063,Kế hoạch kiểm thử Acorn,test_plan,documents/doc063.md
+DOC064,Phụ lục bàn giao HD009,contract,documents/doc064.md
+DOC065,Phụ lục bàn giao HD010,contract,documents/doc065.md
+DOC066,Phụ lục bàn giao HD011,contract,documents/doc066.md
+DOC067,Phụ lục bàn giao HD012,contract,documents/doc067.md
+DOC068,Phụ lục bàn giao HD013,contract,documents/doc068.md
+DOC069,Phụ lục bàn giao HD014,contract,documents/doc069.md
+DOC070,Phụ lục bàn giao HD015,contract,documents/doc070.md

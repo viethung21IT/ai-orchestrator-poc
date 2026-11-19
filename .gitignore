@@ -79,9 +79,10 @@ credentials*.json
 *.db-shm
 
 # Local evaluation data supplied separately
-/data/intent_independent_questions.json
 /data/local/
 /data/raw/
 [Ss]ynthetic_[Ee]nterprise_[Dd]ataset*/
 **/golden_questions.json
 **/golden_questions.csv
+!/data/synthetic_enterprise_v2/evaluation/golden_questions.json
+!/data/synthetic_enterprise_v2/evaluation/golden_questions.csv

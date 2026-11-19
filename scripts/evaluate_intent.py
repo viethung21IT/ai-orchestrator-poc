@@ -18,7 +18,7 @@ from app.services.intent_criteria import INTENT_PROMPTS
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DATASET = (
-    PROJECT_ROOT.parent / "Synthetic_Enterprise_Dataset_V2" / "evaluation" / "golden_questions.json"
+    PROJECT_ROOT / "data" / "synthetic_enterprise_v2" / "evaluation" / "golden_questions.json"
 )
 OTHER_DATASET = PROJECT_ROOT / "data" / "intent_other_questions.json"
 INDEPENDENT_DATASET = PROJECT_ROOT / "data" / "intent_independent_questions.json"

@@ -10,9 +10,6 @@ MODEL = "gemini-decision-1"
 LEGACY_HASH = "sha256:e9533ccec1a693b4b8a09cf4e850aa1e8f6715cfc2e606c606f533d0ef509a76"
 
 
-@pytest.mark.skipif(
-    not INDEPENDENT_DATASET.is_file(), reason="independent evaluation dataset is local",
-)
 def test_independent_dataset_balanced_and_missing_evidence_retains_route():
     questions, review = prepare_questions(INDEPENDENT_DATASET, None)
 

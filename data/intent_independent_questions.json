@@ -1,0 +1,182 @@
+[
+  {
+    "question_id": "IND01",
+    "route": "kpi",
+    "question": "Tỷ suất lợi nhuận gộp chung của các dự án thuộc HD001 trong quý III/2026 là bao nhiêu?",
+    "evidence_status": "sufficient"
+  },
+  {
+    "question_id": "IND02",
+    "route": "kpi",
+    "question": "Trong giai đoạn tháng 6–10/2026, tháng nào danh mục dự án có chi phí trực tiếp cao nhất?",
+    "evidence_status": "sufficient"
+  },
+  {
+    "question_id": "IND03",
+    "route": "kpi",
+    "question": "So với tháng 8/2026, tổng doanh thu ghi nhận tháng 9/2026 của phòng Triển khai hệ thống tăng hay giảm bao nhiêu phần trăm?",
+    "evidence_status": "sufficient"
+  },
+  {
+    "question_id": "IND04",
+    "route": "kpi",
+    "question": "Tính tổng chi phí trực tiếp tháng 12/2026 cho các dự án phòng Dữ liệu & AI phụ trách.",
+    "evidence_status": "missing"
+  },
+  {
+    "question_id": "IND05",
+    "route": "kpi",
+    "question": "Xếp hạng ba dự án theo tỷ suất lợi nhuận gộp lũy kế từ tháng 6 đến tháng 10/2026.",
+    "evidence_status": "sufficient"
+  },
+  {
+    "question_id": "IND06",
+    "route": "rag",
+    "question": "Theo quy trình nghiệm thu nội bộ, khi kết quả kiểm thử chưa đạt thì hồ sơ phải xử lý thế nào trước khi bàn giao?",
+    "evidence_status": "unverified"
+  },
+  {
+    "question_id": "IND07",
+    "route": "rag",
+    "question": "Tài liệu quy định chỉ số tài chính hướng dẫn xử lý tỷ suất lợi nhuận thế nào khi doanh thu bằng 0?",
+    "evidence_status": "sufficient"
+  },
+  {
+    "question_id": "IND08",
+    "route": "rag",
+    "question": "Phụ lục HD001 quy định bên nào xác nhận đã đáp ứng điều kiện nghiệm thu?",
+    "evidence_status": "unverified"
+  },
+  {
+    "question_id": "IND09",
+    "route": "rag",
+    "question": "Trong biên bản nghiệm thu năm 2027 của dự án Atlas, lý do trì hoãn bàn giao được ghi thế nào?",
+    "evidence_status": "missing"
+  },
+  {
+    "question_id": "IND10",
+    "route": "rag",
+    "question": "Tóm tắt nội dung kiểm thử chấp nhận được nêu trong kế hoạch Phoenix thành các đầu việc cho nhóm QA.",
+    "evidence_status": "unverified"
+  },
+  {
+    "question_id": "IND11",
+    "route": "graph",
+    "question": "Orion và Atlas có nằm dưới cùng một hợp đồng không? Liệt kê mã hợp đồng của hai dự án.",
+    "evidence_status": "sufficient"
+  },
+  {
+    "question_id": "IND12",
+    "route": "graph",
+    "question": "Liệt kê mã và loại của các tài liệu được gắn với Phoenix trong danh mục liên kết dự án.",
+    "evidence_status": "sufficient"
+  },
+  {
+    "question_id": "IND13",
+    "route": "graph",
+    "question": "Từ tài liệu DOC004, lần ngược các liên kết để tìm các dự án và hợp đồng liên quan.",
+    "evidence_status": "sufficient"
+  },
+  {
+    "question_id": "IND14",
+    "route": "graph",
+    "question": "Những khách hàng nào có ít nhất một dự án được giao cho phòng Triển khai hệ thống?",
+    "evidence_status": "sufficient"
+  },
+  {
+    "question_id": "IND15",
+    "route": "graph",
+    "question": "Phòng ban nào phụ trách dự án có mã PRJ999?",
+    "evidence_status": "missing"
+  },
+  {
+    "question_id": "IND16",
+    "route": "hybrid_graph_rag",
+    "question": "Ai phụ trách Phoenix và kế hoạch của dự án nêu những điều kiện nào để chuyển sang UAT?",
+    "evidence_status": "unverified"
+  },
+  {
+    "question_id": "IND17",
+    "route": "hybrid_graph_rag",
+    "question": "Xác định bên ký HD001 theo hồ sơ khách hàng, rồi cho biết phụ lục HD001 nêu tiêu chí nghiệm thu nào.",
+    "evidence_status": "unverified"
+  },
+  {
+    "question_id": "IND18",
+    "route": "hybrid_graph_rag",
+    "question": "Lần từ DOC004 đến các dự án được liên kết và tóm tắt cam kết bàn giao được nêu trong chính tài liệu đó.",
+    "evidence_status": "unverified"
+  },
+  {
+    "question_id": "IND19",
+    "route": "hybrid_graph_rag",
+    "question": "Liệt kê các dự án do HD002 bao phủ. Với từng dự án, trích các rủi ro được nêu trong biên bản họp gắn với dự án.",
+    "evidence_status": "unverified"
+  },
+  {
+    "question_id": "IND20",
+    "route": "hybrid_graph_rag",
+    "question": "Cho biết đơn vị phụ trách PRJ999 và trích điều kiện chuyển UAT từ kế hoạch gắn với dự án đó.",
+    "evidence_status": "missing"
+  },
+  {
+    "question_id": "IND21",
+    "route": "hybrid_kpi_rag",
+    "question": "Tính tỷ suất lợi nhuận gộp chung tháng 10/2026 và dẫn quy định nội bộ về cách xử lý khi doanh thu bằng 0.",
+    "evidence_status": "sufficient"
+  },
+  {
+    "question_id": "IND22",
+    "route": "hybrid_kpi_rag",
+    "question": "Cho tôi phần chênh lệch chi phí của Phoenix giữa tháng 8 và 9/2026, kèm tóm tắt những rủi ro triển khai trong kế hoạch của dự án.",
+    "evidence_status": "unverified"
+  },
+  {
+    "question_id": "IND23",
+    "route": "hybrid_kpi_rag",
+    "question": "Tổng lợi nhuận gộp tháng 9/2026 là bao nhiêu? Quy định KPI nội bộ định nghĩa chỉ số này thế nào?",
+    "evidence_status": "sufficient"
+  },
+  {
+    "question_id": "IND24",
+    "route": "hybrid_kpi_rag",
+    "question": "Tính tỷ suất lợi nhuận gộp tháng 12/2026 của Atlas và nêu điều kiện nghiệm thu ghi trong phụ lục HD001.",
+    "evidence_status": "missing"
+  },
+  {
+    "question_id": "IND25",
+    "route": "hybrid_kpi_rag",
+    "question": "Báo cáo tỷ lệ chi phí trực tiếp trên doanh thu tháng 10/2026 của phòng Phát triển phần mềm và trích quy tắc nội bộ về doanh thu ghi nhận.",
+    "evidence_status": "unverified"
+  },
+  {
+    "question_id": "IND26",
+    "route": "other",
+    "question": "Hướng dẫn tôi thay lốp xe đạp bị thủng trên đường.",
+    "evidence_status": "not_applicable"
+  },
+  {
+    "question_id": "IND27",
+    "route": "other",
+    "question": "Vì sao có nhật thực toàn phần?",
+    "evidence_status": "not_applicable"
+  },
+  {
+    "question_id": "IND28",
+    "route": "other",
+    "question": "Viết đoạn hội thoại hài giữa hai con mèo đang tranh ghế.",
+    "evidence_status": "not_applicable"
+  },
+  {
+    "question_id": "IND29",
+    "route": "other",
+    "question": "Đề xuất một thực đơn chay đơn giản cho buổi cắm trại.",
+    "evidence_status": "not_applicable"
+  },
+  {
+    "question_id": "IND30",
+    "route": "other",
+    "question": "Giải thích quy trình quang hợp và vai trò của diệp lục.",
+    "evidence_status": "not_applicable"
+  }
+]

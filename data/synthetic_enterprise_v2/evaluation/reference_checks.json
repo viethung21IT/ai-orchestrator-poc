@@ -1,0 +1,120 @@
+{
+  "Q21": {
+    "revenue_vnd": {
+      "sql": "SELECT SUM(revenue_vnd) FROM project_financials WHERE project_id='PRJ011' AND period_month='2026-10-01'"
+    }
+  },
+  "Q22": {
+    "direct_cost_vnd": {
+      "sql": "SELECT SUM(direct_cost_vnd) FROM project_financials WHERE project_id='PRJ012' AND period_month='2026-09-01'"
+    }
+  },
+  "Q23": {
+    "gross_profit_vnd": {
+      "sql": "SELECT SUM(revenue_vnd-direct_cost_vnd) FROM project_financials WHERE project_id='PRJ013' AND period_month='2026-10-01'"
+    }
+  },
+  "Q24": {
+    "revenue_vnd": {
+      "sql": "SELECT SUM(revenue_vnd) FROM project_financials WHERE project_id='PRJ014'"
+    }
+  },
+  "Q25": {
+    "direct_cost_vnd": {
+      "sql": "SELECT SUM(direct_cost_vnd) FROM project_financials WHERE project_id='PRJ015' AND period_month='2026-10-01'"
+    }
+  },
+  "Q26": {
+    "gross_profit_vnd": {
+      "sql": "SELECT SUM(revenue_vnd-direct_cost_vnd) FROM project_financials WHERE project_id='PRJ016'"
+    }
+  },
+  "Q27": {
+    "gross_profit_vnd": {
+      "sql": "SELECT SUM(f.revenue_vnd-f.direct_cost_vnd) FROM project_financials f JOIN projects p USING(project_id) WHERE p.department_id='DEP005' AND f.period_month='2026-10-01'"
+    }
+  },
+  "Q28": {
+    "gross_profit_vnd": {
+      "sql": "SELECT SUM(f.revenue_vnd-f.direct_cost_vnd) FROM project_financials f JOIN projects p USING(project_id) WHERE p.department_id='DEP006' AND f.period_month='2026-09-01'"
+    }
+  },
+  "Q37": {
+    "project_ids": {
+      "sql": "SELECT project_id FROM projects WHERE contract_id='HD009'",
+      "many": true
+    }
+  },
+  "Q38": {
+    "project_ids": {
+      "sql": "SELECT project_id FROM projects WHERE contract_id='HD010'",
+      "many": true
+    }
+  },
+  "Q39": {
+    "project_ids": {
+      "sql": "SELECT project_id FROM projects WHERE contract_id='HD018'",
+      "many": true
+    }
+  },
+  "Q40": {
+    "customer_id": {
+      "sql": "SELECT c.customer_id FROM contracts c JOIN projects p USING(contract_id) WHERE p.project_id='PRJ035'"
+    },
+    "contract_id": {
+      "sql": "SELECT contract_id FROM projects WHERE project_id='PRJ035'"
+    }
+  },
+  "Q41": {
+    "customer_id": {
+      "sql": "SELECT c.customer_id FROM contracts c JOIN projects p USING(contract_id) WHERE p.project_id='PRJ042'"
+    },
+    "contract_id": {
+      "sql": "SELECT contract_id FROM projects WHERE project_id='PRJ042'"
+    }
+  },
+  "Q42": {
+    "customer_id": {
+      "sql": "SELECT c.customer_id FROM contracts c JOIN projects p USING(contract_id) WHERE p.project_id='PRJ060'"
+    },
+    "contract_id": {
+      "sql": "SELECT contract_id FROM projects WHERE project_id='PRJ060'"
+    }
+  },
+  "Q43": {
+    "contract_id": {
+      "sql": "SELECT contract_id FROM projects WHERE project_id='PRJ014'"
+    }
+  },
+  "Q44": {
+    "contract_id": {
+      "sql": "SELECT contract_id FROM projects WHERE project_id='PRJ016'"
+    }
+  },
+  "Q45": {
+    "contract_id": {
+      "sql": "SELECT contract_id FROM projects WHERE project_id='PRJ020'"
+    }
+  },
+  "Q46": {
+    "contract_id": {
+      "sql": "SELECT contract_id FROM projects WHERE project_id='PRJ023'"
+    }
+  },
+  "Q47": {
+    "revenue_vnd": {
+      "sql": "SELECT revenue_vnd FROM project_financials WHERE project_id='PRJ015' AND period_month='2026-10-01'"
+    },
+    "direct_cost_vnd": {
+      "sql": "SELECT direct_cost_vnd FROM project_financials WHERE project_id='PRJ015' AND period_month='2026-10-01'"
+    }
+  },
+  "Q48": {
+    "revenue_vnd": {
+      "sql": "SELECT revenue_vnd FROM project_financials WHERE project_id='PRJ019' AND period_month='2026-10-01'"
+    },
+    "direct_cost_vnd": {
+      "sql": "SELECT direct_cost_vnd FROM project_financials WHERE project_id='PRJ019' AND period_month='2026-10-01'"
+    }
+  }
+}
